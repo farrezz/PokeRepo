@@ -4,11 +4,37 @@
 }
 
 @if(Model.Pokemon == null)
-{
-    
-    <div>no pokemon is found</div>
+{ 
+    <div>
+       <h1> No pokemon was found!</h1>
+    </div>
 }else
 {
-    <div>@Model.Pokemon.Name</div>
+    <div>
+        <h1>@Model.Pokemon.Name </h1>
+        <br />
+        <label>Height: </label>
+        <br />
+        <h5>@Model.Pokemon.Height</h5>
+        <label>Abilities: </label>
+        <br />
+        <ul>
+            @foreach (var ability in Model.Pokemon.Abilities)
+            {
+                <li>@ability.ability.name</li>
+            }
+        </ul>
+        <label>Forms: </label>
+        <br />
+        <ul>
+            @foreach (var form in Model.Pokemon.Forms)
+            {
+                <li>@form.Name</li>
+            }
+        </ul>
+        <label>Experience: </label>
+        <br />
+        <h5>@Model.Pokemon.Base_experience</h5>
+    </div>
     
 }
