@@ -11,7 +11,7 @@
 @foreach (Pokemons item in Enum.GetValues(typeof(Pokemons)))
 {
     <div>
-       <a  asp-page="pokemons"> <h6>@item</h6> </a>
+       <a  asp-page="pokemons" asp-route-name="@item.ToString()"> <h6>@item</h6> </a>
 
     </div>
 }

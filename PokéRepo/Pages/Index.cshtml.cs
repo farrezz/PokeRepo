@@ -1,20 +1,16 @@
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using PokéRepo.Api;
+using PokéRepo.Models;
 
 namespace PokéRepo.Pages
 {
     public class IndexModel : PageModel
     {
-        private readonly ILogger<IndexModel> _logger;
+        public Root Pokemons { get; set; }
 
-        public IndexModel(ILogger<IndexModel> logger)
+        public async Task OnGet()
         {
-            _logger = logger;
-        }
-
-        public void OnGet()
-        {
-
+            Pokemons = await new ApiCaller().MakeCall("charizard");
 
         }
 

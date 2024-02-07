@@ -2,3 +2,13 @@
 @model PokéRepo.Pages.pokemonsModel
 @{
 }
+
+@if(Model.Pokemon == null)
+{
+    
+    <div>no pokemon is found</div>
+}else
+{
+    <div>@Model.Pokemon.Name</div>
+    
+}
