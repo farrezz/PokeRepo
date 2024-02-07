@@ -15,6 +15,11 @@ namespace PokéRepo.Pages
         public void OnGet()
         {
 
+
         }
+
+
+
+
     }
 }

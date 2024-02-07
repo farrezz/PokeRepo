@@ -1,10 +1,21 @@
 ﻿@page
+@using static PokéRepo.Enums.Enum
 @model IndexModel
 @{
     ViewData["Title"] = "Home page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+
+<h1>Pokémons</h1>
+
+
+
+@foreach (Pokemons item in Enum.GetValues(typeof(Pokemons)))
+{
+    <div>
+       <a  asp-page="pokemons"> <h6>@item</h6> </a>
+
+    </div>
+}
+
+
